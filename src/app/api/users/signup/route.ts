@@ -44,7 +44,7 @@ export async function POST(request: NextRequest) {
             success: true,
             savedUser
         })
-
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (error: any) {
         console.error("Signup Error:", error)
         return NextResponse.json({ error: error.message }, { status: 500 })
