@@ -20,7 +20,7 @@ export default function VerifyEmailPage() {
             
         }
     }
-
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(() => {
         const urlToken = window.location.search.split("=")[1]
         setToken(urlToken || "")
