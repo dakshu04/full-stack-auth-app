@@ -14,6 +14,7 @@ export default function ProfilePage() {
             await axios.get("/api/users/logout")
             toast.success("Logout successful")
             router.push("/login")
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
         } catch (error: any) {
             console.error(error.message)
             toast.error(error.message)
@@ -25,8 +26,9 @@ export default function ProfilePage() {
             const res = await axios.get("/api/users/me")
             console.log(res.data)
             setData(res.data.data._id)
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
         } catch (error: any) {
-            toast.error("Failed to fetch user details")
+            toast.error("Failed to fetch user details", error)
         }
     }
 
